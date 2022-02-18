@@ -229,8 +229,8 @@ boolean PubSubClient::connect(const char *id, const char *user, const char *pass
             }
             this->buffer[length++] = v;
 
-            this->buffer[length++] = ((this->keepAlive * 10) >> 8);
-            this->buffer[length++] = ((this->keepAlive * 10) & 0xFF);
+            this->buffer[length++] = ((this->keepAlive * 40) >> 8);
+            this->buffer[length++] = ((this->keepAlive * 40) & 0xFF);
 
             CHECK_STRING_LENGTH(length,id)
             length = writeString(id,this->buffer,length);
